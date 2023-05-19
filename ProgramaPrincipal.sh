@@ -5,16 +5,19 @@
 . ./Funciones.sh
 
 #1.Comprobamos si somsos root
-f_somosroot
+f_permisoroot
+echo 'Comprobando permisos ----------------------------------------------'
+
 if [ $? -ne 0 ]; then
     exit 1
 fi
-echo '1 ok --------------------------------------------------------------'
+echo 'OK ----------------------------------------------------------------'
 
 
 #2.Comprobar si tenemos conexion a internet 
-f_conexion
+f_compruebaconexion
+echo 'Comprobando conexion ----------------------------------------------'
 if [ $? -ne 0 ]; then
     exit 1
 fi
-echo '2 ok --------------------------------------------------------------'
+echo 'OK ----------------------------------------------------------------'
