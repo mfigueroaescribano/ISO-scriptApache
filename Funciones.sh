@@ -27,3 +27,7 @@ function f_compruebaconexion {
         return 1
     fi
  }
+
+ function f_arrancaservicio {
+    systemctl start apache2;
+ }

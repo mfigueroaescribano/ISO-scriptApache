@@ -25,6 +25,9 @@ echo 'OK'
 echo 'Comprobando servicio Apache...'
 f_compruebaservicio
 if [ $? -ne 0 ]; then
-    exit 1
+    f_arrancaservicio;
 fi
-echo 'OK'
+echo 'Arrancando'
+
+# Ya si no está activo levanta el servicio, falta poner bien la salida por pantalla
+# y volver a comprobar. Falta notificación por correo.
