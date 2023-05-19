@@ -5,19 +5,26 @@
 . ./Funciones.sh
 
 #1.Comprobamos si somsos root
+echo 'Comprobando permisos...'
 f_permisoroot
-echo 'Comprobando permisos ----------------------------------------------'
-
 if [ $? -ne 0 ]; then
     exit 1
 fi
-echo 'OK ----------------------------------------------------------------'
+echo 'OK'
 
 
 #2.Comprobar si tenemos conexion a internet 
+echo 'Comprobando conexión a internet...'
 f_compruebaconexion
-echo 'Comprobando conexion ----------------------------------------------'
 if [ $? -ne 0 ]; then
     exit 1
 fi
-echo 'OK ----------------------------------------------------------------'
+echo 'OK'
+
+#3. Comprobando servicio Apache
+echo 'Comprobando servicio Apache...'
+f_compruebaservicio
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+echo 'OK'

@@ -1,7 +1,7 @@
 #!/bin/bash
 #Fichero de funciones
 
-function f_somosroot {
+function f_permisoroot {
     if [ $UID -eq 0 ]; then
         return 0
     else
@@ -10,11 +10,20 @@ function f_somosroot {
     fi
 }
 
-function f_conexion {
-         if ping -c 1 -q 8.8.8.8 > /dev/null; then
-         return 0
-         else
-         echo -e "Para ejecutar este script es necesario que disponga de conexion a internet"
-         return 1
-         fi
+function f_compruebaconexion {
+    if ping -c 1 -q 8.8.8.8 > /dev/null; then
+        return 0
+    else
+        echo -e "Para ejecutar este script es necesario que disponga de conexion a internet"
+        return 1
+    fi
+ }
+
+ function f_compruebaservicio {
+    if [ $(systemctl is-active apache2) = "active" ]; then
+        return 0
+    else
+        echo 'El servicio Apache no está activo'
+        return 1
+    fi
  }
