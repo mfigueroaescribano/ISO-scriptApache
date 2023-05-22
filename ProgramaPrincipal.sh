@@ -24,10 +24,13 @@ echo 'OK'
 #3. Comprobando servicio Apache
 echo 'Comprobando servicio Apache...'
 f_compruebaservicio
-if [ $? -ne 0 ]; then
-    f_arrancaservicio;
+if [ $? -e 0 ]; then
+    echo 'El servicio ya está activo'
+else
+    f_arrancaservicio
+    echo 'Arrancando'
+    systemctl status apache2
 fi
-echo 'Arrancando'
 
 # Ya si no está activo levanta el servicio, falta poner bien la salida por pantalla
 # y volver a comprobar. Falta notificación por correo.
