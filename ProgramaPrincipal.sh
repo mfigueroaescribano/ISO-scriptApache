@@ -44,7 +44,7 @@ else
     if [ $? -eq 0 ]; then
         echo 'Notificando por correo...'
         echo -e "Subject: Servicio Apache iniciado\n\nEl servicio Apache acaba de ser iniciado en su servidor" | sendmail -f infraestructura@eshipping.es $correo
-        echo -e '${verde}●${reset} Inicio completado'
+        echo -e 'Inicio completado'
     else
         sleep 2
         echo 'El arranque del servicio ha fallado'
