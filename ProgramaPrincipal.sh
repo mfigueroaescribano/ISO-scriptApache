@@ -32,8 +32,8 @@ if [ $? -eq 0 ]; then
     echo 'El servicio ya está activo'
 else
     f_arrancaservicio
-    echo 'Arrancando'
-    systemctl status apache2
-    echo -e "Subject: Servicio Apache iniciado\n\nEl servicio Apache acaba de ser iniciado en su servidor" | sendmail -f infraestructura@eshipping.es $correo
-
+    echo 'Arrancando el servicio...'
+    echo 'Notificando por correo...'
+    echo -e "Subject: Servicio Apache iniciado\n\nEl servicio Apache acaba de ser iniciado en su servidor\n$date" | sendmail -f infraestructura@eshipping.es $correo
+    echo 'Inicio completado'
 fi
