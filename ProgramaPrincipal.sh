@@ -24,7 +24,7 @@ echo 'OK'
 #3. Comprobando servicio Apache
 echo 'Comprobando servicio Apache...'
 f_compruebaservicio
-if [ $? -e 0 ]; then
+if [ $? -eq 0 ]; then
     echo 'El servicio ya está activo'
 else
     f_arrancaservicio
