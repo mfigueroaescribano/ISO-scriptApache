@@ -2,13 +2,14 @@
 #ProgramaPrincipal
 
 verde="\e[32m"
+reset="\e[0m"
 
 #Enlazar programa funcional con el de funciones
 . ./Funciones.sh
 
 read -p 'Introduzca su email para recibir notificaciones: ' correo
 echo 'El correo electrónico introducido es:'
-echo -e ${verde} $correo
+echo -e ${verde} $correo ${reset}
 
 sleep 2
 
