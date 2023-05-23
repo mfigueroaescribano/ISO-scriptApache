@@ -8,7 +8,7 @@ verde="\e[32m"
 
 read -p 'Introduzca su email para recibir notificaciones: ' correo
 echo 'El correo electrónico introducido es:'
-echo $correo
+echo -e ${verde} $correo
 
 sleep 2
 
