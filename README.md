@@ -29,6 +29,9 @@ AuthMethod=LOGIN
 
 ### Información
 Miguel Figueroa Escribano
+
 mfigueroaescribano.edu@gmail.com
+
 1 ASIR - IES Gonzalo Nazareno
+
 Implantación de Sistemas Operativos
