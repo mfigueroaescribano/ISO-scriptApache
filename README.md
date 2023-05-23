@@ -1,7 +1,7 @@
 # ISO - Script Apache + email
 
 ### Descripción
-Comprobar que se está ejecutando Apache y si está parado lanzarlo e informar por correo al administrador
+Al ejecutar el script se comprueba si está corriendo el servicio Apache. Si está activo, muestra por pantalla que ya está activo y finaliza el script. Si no lo está, levanta el servicio y envía un correo electrónico a la dirección que se pide en primer lugar para informar de que se ha levantado exitosamente el servicio Apache.
 
 ### Configuración del escenario
 
