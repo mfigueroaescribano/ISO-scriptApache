@@ -3,6 +3,7 @@
 
 verde="\e[32m"
 reset="\e[0m"
+rojo="\e[31m"
 
 #Enlazar programa funcional con el de funciones
 . ./Funciones.sh
@@ -45,7 +46,7 @@ else
     if [ $? -eq 0 ]; then
         echo 'Notificando por correo...'
         echo -e "Subject: Servicio Apache iniciado\n\nEl servicio Apache acaba de ser iniciado en su servidor" | sendmail -f infraestructura@eshipping.es $correo
-        echo -e 'Inicio completado'
+        echo -e ${verde}'● Inicio completado'${reset}
     else
         sleep 2
         echo 'El arranque del servicio ha fallado'
