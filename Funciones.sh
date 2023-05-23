@@ -1,6 +1,11 @@
 #!/bin/bash
 #Fichero de funciones
 
+rojo="\e[31m"
+reset="\e[0m"
+
+
+
 function f_permisoroot {
     if [ $UID -eq 0 ]; then
         return 0
@@ -23,7 +28,7 @@ function f_compruebaconexion {
     if [ $(systemctl is-active apache2) = "active" ]; then
         return 0
     else
-        echo 'El servicio Apache no está activo'
+        echo -e ${rojo}'El servicio Apache no está activo'${reset}
         return 1
     fi
  }

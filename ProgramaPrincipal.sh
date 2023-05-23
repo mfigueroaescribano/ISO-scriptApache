@@ -49,7 +49,7 @@ else
         echo -e ${verde}'● Inicio completado'${reset}
     else
         sleep 2
-        echo 'El arranque del servicio ha fallado'
+        echo -e ${rojo}'El arranque del servicio ha fallado'${reset}
         echo 'Se notificará por correo'
         echo -e "Subject: Arranque de Apache fallido\n\nEl servicio Apache no ha podido ser iniciado en su servidor" | sendmail -f infraestructura@eshipping.es $correo
         echo 'Notificado'
