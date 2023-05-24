@@ -1,5 +1,7 @@
 #!/bin/bash
 #ProgramaPrincipal
+#Autor: Miguel Figueroa Escribano
+#Repositorio: https://github.com/mfigueroaescribano/ISO-scriptApache
 
 verde="\e[32m"
 reset="\e[0m"
@@ -9,8 +11,14 @@ rojo="\e[31m"
 . ./Funciones.sh
 
 read -p 'Introduzca su email para recibir notificaciones: ' correo
-echo 'El correo electrónico introducido es:'
-echo -e ${verde} $correo ${reset}
+regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+if echo "$correo" | grep -Pq "$regex"; then
+    echo -e "El correo electrónico" $correo es ${verde} correcto" ${reset}"
+else
+    echo -e "Dirección de correo ${rojo} no válido ${reset}"
+    exit 1
+fi
 
 sleep 2
 
