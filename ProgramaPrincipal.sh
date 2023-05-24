@@ -11,12 +11,12 @@ rojo="\e[31m"
 . ./Funciones.sh
 
 read -p 'Introduzca su email para recibir notificaciones: ' correo
-regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+regex="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 
 if echo "$correo" | grep -Pq "$regex"; then
     echo -e "El correo electrónico" $correo es ${verde} correcto" ${reset}"
 else
-    echo -e "Dirección de correo ${rojo} no válido ${reset}"
+    echo -e "Dirección de correo${rojo} no válida ${reset}"
     exit 1
 fi
 
