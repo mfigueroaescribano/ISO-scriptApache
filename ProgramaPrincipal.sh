@@ -3,6 +3,17 @@
 #Autor: Miguel Figueroa Escribano
 #Repositorio: https://github.com/mfigueroaescribano/ISO-scriptApache
 
+# Requisitos previos:
+#  - Paquete ssmtp instalado en el sistema para el envío de correos electrónicos
+#  - Configuración del servicio ssmtp
+#  - Tener una cuenta registrada en un servidor de correo que tenga habilitado el acceso por smtp.
+
+# Función del script:
+#   Al ejecutar el script se comprueba si está corriendo el servicio Apache. Si está activo, muestra por pantalla 
+#   que ya está activo y finaliza el script. Si no lo está, levanta el servicio y envía un correo electrónico a la 
+#   dirección que se pide en primer lugar para informar de que se ha levantado exitosamente el servicio Apache.
+#   Si el arranque del servicio Apache falla también se le informará al administrador de este suceso.
+
 verde="\e[32m"
 reset="\e[0m"
 rojo="\e[31m"
